@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { forwardRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import { Presence } from '../types/lanyard';
 import SpotifyLogo from '../assets/images/spotify-logo.svg';
+import { config } from '../config';
+import { Presence } from '../types/lanyard';
+
+const { discordId } = config;
 
 // Thanks to Tim (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx) for the types
 
@@ -34,8 +37,6 @@ const logLanyardEvent = (eventName: string, data: any) => {
     data
   );
 };
-
-const discordId = "94490510688792576";
 
 const Doing = ({setActive, ...props}: {setActive: (active: boolean) => void} & any, ref: any) => {
   const [socket, setSocket] = useState<WebSocket | null>(null);
