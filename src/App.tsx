@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import Nav from "./components/Nav";
@@ -10,16 +9,6 @@ import Presence from "./pages/Presence";
 import Where from "./pages/Where";
 
 function App() {
-
-  useEffect(() => {
-    const script = document.createElement("script");
-
-    script.src = "/p-static/js/stars.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-  }, []);
-
   return (
     <Wrapper>
       <MainContent>

@@ -1,5 +1,5 @@
-# phineas.io
-This is the React app that runs on [phineas.io](https://phineas.io).
+# quantumly.dev
+This is the React app that runs on [quantumly.dev](https://quantumly.dev).
 
 ## "Stack"
 - create-react-app

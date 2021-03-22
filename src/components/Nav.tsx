@@ -74,7 +74,7 @@ const Nav = () => {
   return (
     <>
       <MobileHeader>
-        <Title>Phineas Walton</Title>
+        <Title>Nejc Drobnič</Title>
         {openOnMobile ? <XIcon onClick={toggleMobileMenu} /> : <MenuIcon onClick={toggleMobileMenu} />}
       </MobileHeader>
       <Container openOnMobile={openOnMobile}>
@@ -88,7 +88,7 @@ const Nav = () => {
         <Items>
           {!openOnMobile ?
           <Row>
-            <Title>Phineas Walton</Title>
+            <Title>Nejc Drobnič</Title>
             {/* <IconButton>
               <ChevronDown />
             </IconButton> */}
@@ -109,9 +109,9 @@ const Nav = () => {
           </div>
 
           <Icons>
-            <a href="https://twitter.com/phineyes"><TwitterLogo /></a>
-            <a href="https://github.com/phineas"><GitHubLogo /></a>
-            <a href="https://keybase.io/phineas"><KeyIcon /></a>
+            <a href="https://twitter.com/quantumlytngld"><TwitterLogo /></a>
+            <a href="https://github.com/quantumlytangled"><GitHubLogo /></a>
+            <a href="https://keybase.io/quantumlytangled"><KeyIcon /></a>
           </Icons>
           <Doing style={{display: presenceActive ? 'block' : 'none'}} setActive={setPresenceActive} />
         </Items>

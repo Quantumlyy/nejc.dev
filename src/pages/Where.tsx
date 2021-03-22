@@ -10,14 +10,8 @@ import HonkAppIcon from '../assets/images/honk-app-icon.jpg';
 */
 
 const Where = () => {
-  const repoElements = config.repos.map((repo, i) => (
-    <Repo
-      key={i}
-      name={repo.name}
-      url={repo.url}
-      primaryLanguage={repo.lang}
-      description={repo.description}
-    />
+  const repoElements = config.repos.map(({ name, url, lang, description }, i) => (
+    <Repo key={i} name={name} url={url} primaryLanguage={lang} description={description} />
   ));
 
   return (
