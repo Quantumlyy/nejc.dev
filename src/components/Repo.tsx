@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
+export enum Language {
+  Elixir = 'Elixir',
+  TypeScript = 'TypeScript'
+}
+
+const determineLanguageColor = (lang: Language): string => {
+  switch (lang) {
+    case Language.Elixir:
+      return '#9c1fa5';
+    case Language.TypeScript:
+      return '#007acc';
+    default:
+      return '#000';
+  }
+}
+
 const Repo = ({
   url,
   name,
@@ -8,7 +24,7 @@ const Repo = ({
 }: {
   url: string;
   name: string;
-  primaryLanguage: string;
+  primaryLanguage: Language;
   description: string;
 }) => {
   return (
@@ -23,13 +39,7 @@ const Repo = ({
           <p>
             {primaryLanguage}{" "}
             <LanguageColorBlip
-              color={
-                primaryLanguage === "Elixir"
-                  ? "#9c1fa5"
-                  : primaryLanguage === "TypeScript"
-                  ? "#007acc"
-                  : "#000"
-              }
+              color={determineLanguageColor(primaryLanguage)}
             />
           </p>
         </Column>

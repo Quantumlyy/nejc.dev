@@ -4,7 +4,7 @@ import styled from "styled-components";
 import HivenAppIcon from '../assets/images/hiven-app-icon.png';
 import GigglAppIcon from '../assets/images/giggl-app-icon.jpg';
 import HonkAppIcon from '../assets/images/honk-app-icon.jpg';
-import Repo from "../components/Repo";
+import Repo, { Language } from "../components/Repo";
 
 const Where = () => {
   return (
@@ -19,9 +19,9 @@ const Where = () => {
       </CoWrapper>
 
       <h3>Open-source Projects</h3>
-      <Repo name={"lanyard"} url={"https://github.com/phineas/lanyard"} primaryLanguage={"Elixir"} description="Expose your Discord presence to an API in <10 seconds (used on this site)"/>
-      <Repo name={"node_compass"} url={"https://github.com/hivenapp/node_compass"} primaryLanguage={"Elixir"} description="Automatic hash ring management for Elixir nodes"/>
-      <Repo name={"phineas.io"} url={"https://github.com/phineas/phineas.io"} primaryLanguage={"TypeScript"} description="This very website"/>
+      <Repo name={"lanyard"} url={"https://github.com/phineas/lanyard"} primaryLanguage={Language.Elixir} description="Expose your Discord presence to an API in <10 seconds (used on this site)"/>
+      <Repo name={"node_compass"} url={"https://github.com/hivenapp/node_compass"} primaryLanguage={Language.Elixir} description="Automatic hash ring management for Elixir nodes"/>
+      <Repo name={"phineas.io"} url={"https://github.com/phineas/phineas.io"} primaryLanguage={Language.TypeScript} description="This very website"/>
     </PageWrapper>
   )
 }
