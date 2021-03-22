@@ -1,4 +1,5 @@
-import Repo, { Language } from "../components/Repo";
+import Repo from "../components/Repo";
+import { config } from "../config";
 import PageWrapper from "./PageWrapper";
 /*
 import Co from "../components/Co";
@@ -9,19 +10,27 @@ import HonkAppIcon from '../assets/images/honk-app-icon.jpg';
 */
 
 const Where = () => {
+  const repoElements = config.repos.map((repo, i) => (
+    <Repo
+      key={i}
+      name={repo.name}
+      url={repo.url}
+      primaryLanguage={repo.lang}
+      description={repo.description}
+    />
+  ));
+
   return (
     <PageWrapper>
-      <h1>Where I've Done It</h1>
       <h3>Open-source Projects</h3>
-      <Repo name={"lanyard"} url={"https://github.com/phineas/lanyard"} primaryLanguage={Language.Elixir} description="Expose your Discord presence to an API in <10 seconds (used on this site)"/>
-      <Repo name={"node_compass"} url={"https://github.com/hivenapp/node_compass"} primaryLanguage={Language.Elixir} description="Automatic hash ring management for Elixir nodes"/>
-      <Repo name={"phineas.io"} url={"https://github.com/phineas/phineas.io"} primaryLanguage={Language.TypeScript} description="This very website"/>
+      <div>{ repoElements }</div>
     </PageWrapper>
   )
 }
 
 /*
 
+<h1>Where I've Done It</h1>
 <h3>Companies</h3>
 <CoWrapper>  
   <Co url="https://hiven.io" name="Hiven" iconReference={HivenAppIcon} tagline="Consumer social" role={"Founder & Developer"} what={"I founded Hiven back in 2019 to make it easy for anyone create premium groups."}/>
