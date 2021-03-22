@@ -5,28 +5,9 @@ import styled, { keyframes } from "styled-components";
 import SpotifyLogo from '../assets/images/spotify-logo.svg';
 import { config } from '../config';
 import { Presence } from '../types/lanyard';
+import { EventType, Operation, SocketEvent } from "../types/lanyardSocket";
 
 const { discordId } = config;
-
-// Thanks to Tim (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx) for the types
-
-enum Operation {
-  Event,
-  Hello,
-  Initialize,
-  Heartbeat,
-}
-
-enum EventType {
-  INIT_STATE = "INIT_STATE",
-  PRESENCE_UPDATE = "PRESENCE_UPDATE",
-}
-
-type SocketEvent = {
-  op: Operation;
-  t?: EventType;
-  d: Presence | unknown;
-};
 
 const logLanyardEvent = (eventName: string, data: any) => {
   // eslint-disable-next-line no-console
