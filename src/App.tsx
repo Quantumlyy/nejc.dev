@@ -84,7 +84,9 @@ function App() {
                 <Route exact path="/where" component={Where} />
                 <Route exact path="/how" component={How} />
                 <Route exact path="/etc" component={Etc} />
-                <Route exact path="/presence" component={Presence} />
+                <Route exact path="/presence" render={(props) => (
+                  <Presence {...props} doing={doing} />
+                )} />
               </Switch>
             </AnimatePresence>
           </ContentWrapper>
