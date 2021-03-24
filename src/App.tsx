@@ -1,5 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { createStore } from "redux";
 import styled from "styled-components";
 import Nav from "./components/Nav";
 import Etc from "./pages/Etc";
@@ -8,27 +10,39 @@ import How from "./pages/How";
 import Presence from "./pages/Presence";
 import Where from "./pages/Where";
 
+const store = createStore(
+  () => ({
+    test: { hi: 1 }
+  }),
+  // @ts-ignore
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 function App() {
   return (
-    <Wrapper>
-      <MainContent>
-        <Router>
-          <Nav />
+    <>
+      <Provider store={store}>
+        <Wrapper>
+          <MainContent>
+            <Router>
+              <Nav />
 
-          <ContentWrapper>
-            <AnimatePresence>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/where" component={Where} />
-                <Route exact path="/how" component={How} />
-                <Route exact path="/etc" component={Etc} />
-                <Route exact path="/presence" component={Presence} />
-              </Switch>
-            </AnimatePresence>
-          </ContentWrapper>
-        </Router>
-      </MainContent>
-    </Wrapper>
+              <ContentWrapper>
+                <AnimatePresence>
+                  <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/where" component={Where} />
+                    <Route exact path="/how" component={How} />
+                    <Route exact path="/etc" component={Etc} />
+                    <Route exact path="/presence" component={Presence} />
+                  </Switch>
+                </AnimatePresence>
+              </ContentWrapper>
+            </Router>
+          </MainContent>
+        </Wrapper>
+      </Provider>
+    </>
   );
 }
 
