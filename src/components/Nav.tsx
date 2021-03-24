@@ -12,6 +12,7 @@ import {
 } from "./Icons";
 import Doing from "./Doing";
 import useSound from "use-sound";
+import { Activity, Presence } from "../types/lanyard";
 
 const pathnameOffsets: { [key: string]: number } = {
   "/": 0,
@@ -21,7 +22,17 @@ const pathnameOffsets: { [key: string]: number } = {
 };
 
 const Nav = (
-  { current, setActive }: { current: boolean, setActive: (active: boolean) => void },
+  {
+    current,
+    setActive,
+    doing,
+    currentActivity
+  }: {
+    current: boolean,
+    setActive: (active: boolean) => void
+    doing?: Presence,
+    currentActivity?: Activity
+  },
 ) => {
   const history = useHistory();
   const { pathname } = useLocation();
@@ -114,7 +125,7 @@ const Nav = (
             <a href="https://github.com/quantumlytangled"><GitHubLogo /></a>
             <a href="https://keybase.io/quantumlytangled"><KeyIcon /></a>
           </Icons>
-          <Doing style={{display: current ? 'block' : 'none'}} setActive={setActive} />
+          <Doing style={{display: current ? 'block' : 'none'}} setActive={setActive} currentActivity={currentActivity} doing={doing} />
         </Items>
       </Container>
     </>

@@ -1,23 +1,81 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import Nav from "./components/Nav";
+import { config } from "./config";
 import Etc from "./pages/Etc";
 import Home from "./pages/Home";
 import How from "./pages/How";
 import Presence from "./pages/Presence";
 import Where from "./pages/Where";
+import { Presence as LanyardPresence } from "./types/lanyard";
+import { EventType, Operation, SocketEvent } from "./types/lanyardSocket";
+
+const logLanyardEvent = (eventName: string, data: unknown) => {
+  // eslint-disable-next-line no-console
+  console.log(
+    `%cLanyard%c <~ ${eventName} %o`,
+    "background-color: #d7bb87; border-radius: 5px; padding: 3px; color: #372910;",
+    "background: none; color: #d7bb87;",
+    data
+  );
+};
 
 function App() {
 
   const [presenceActive, setPresenceActive] = useState(false);
+  const [socket, setSocket] = useState<WebSocket | null>(null);
+  const [doing, setDoing] = useState<LanyardPresence>();
+
+  const send = (op: Operation, d?: unknown): void => {
+    if (socket !== null) socket.send(JSON.stringify({ op, d }));
+  };
+
+  useEffect(() => {
+    if (socket === null) return () => {};
+
+    socket.onmessage = function ({ data }: MessageEvent): void {
+      const { op, t, d }: SocketEvent = JSON.parse(data);
+
+      if (op === Operation.Hello) {
+        setInterval(
+          () => send(Operation.Heartbeat),
+          (d as { heartbeat_interval: number }).heartbeat_interval
+        );
+        send(Operation.Initialize, { subscribe_to_id: config.discordId });
+      } else if (op === Operation.Event && t) {
+        logLanyardEvent(t, d);
+
+        if ([EventType.INIT_STATE, EventType.PRESENCE_UPDATE].includes(t))
+          setDoing(d as LanyardPresence);
+      }
+    };
+
+    socket.onclose = () => {
+      setSocket(null);
+    };
+  }, [socket]);
+
+  useEffect(() => {
+    if (!socket) setSocket(new WebSocket("wss://api.lanyard.rest/socket"));
+  }, [socket]);
+
+  const currentActivity = useMemo(
+    () => doing?.activities.filter((activity) => activity.type === 0)[0],
+    [doing]
+  );
+
+  useEffect(() => {
+    // @ts-expect-error Argument of type 'true | Activity | undefined' is not assignable to parameter of type 'SetStateAction<boolean>'. Type 'undefined' is not assignable to type 'SetStateAction<boolean>'. ts(2345)
+    setPresenceActive(doing?.listening_to_spotify || currentActivity);
+  }, [doing, currentActivity])
 
   return (
     <Wrapper>
       <MainContent>
         <Router>
-          <Nav current={presenceActive} setActive={setPresenceActive} />
+          <Nav current={presenceActive} setActive={setPresenceActive} currentActivity={currentActivity} doing={doing} />
 
           <ContentWrapper>
             <AnimatePresence>

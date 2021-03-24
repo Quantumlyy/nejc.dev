@@ -1,73 +1,23 @@
 import { motion } from "framer-motion";
-import { forwardRef, useEffect, useMemo, useState } from "react";
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import SpotifyLogo from '../assets/images/spotify-logo.svg';
-import { config } from '../config';
-import { Presence } from '../types/lanyard';
-import { EventType, Operation, SocketEvent } from "../types/lanyardSocket";
-
-const { discordId } = config;
-
-const logLanyardEvent = (eventName: string, data: any) => {
-  // eslint-disable-next-line no-console
-  console.log(
-    `%cLanyard%c <~ ${eventName} %o`,
-    "background-color: #d7bb87; border-radius: 5px; padding: 3px; color: #372910;",
-    "background: none; color: #d7bb87;",
-    data
-  );
-};
+import { Activity, Presence } from "../types/lanyard";
 
 const Doing = (
-  { setActive, ...props }: { setActive: (active: boolean) => void } & any,
+  {
+    setActive,
+    doing,
+    currentActivity,
+    ...props
+  }: {
+    setActive: (active: boolean) => void
+    doing?: Presence,
+    currentActivity?: Activity
+  } & any,
   ref: any
 ) => {
-  const [socket, setSocket] = useState<WebSocket | null>(null);
-  const [doing, setDoing] = useState<Presence>();
-
-  const send = (op: Operation, d?: unknown): void => {
-    if (socket !== null) socket.send(JSON.stringify({ op, d }));
-  };
-
-  useEffect(() => {
-    if (socket === null) return () => {};
-
-    socket.onmessage = function ({ data }: MessageEvent): void {
-      const { op, t, d }: SocketEvent = JSON.parse(data);
-
-      if (op === Operation.Hello) {
-        setInterval(
-          () => send(Operation.Heartbeat),
-          (d as { heartbeat_interval: number }).heartbeat_interval
-        );
-        send(Operation.Initialize, { subscribe_to_id: discordId });
-      } else if (op === Operation.Event && t) {
-        logLanyardEvent(t, d);
-
-        if ([EventType.INIT_STATE, EventType.PRESENCE_UPDATE].includes(t))
-          setDoing(d as Presence);
-      }
-    };
-
-    socket.onclose = () => {
-      setSocket(null);
-    };
-  }, [socket]);
-
-  useEffect(() => {
-    if (!socket) setSocket(new WebSocket("wss://api.lanyard.rest/socket"));
-  }, [socket]);
-
-  const currentActivity = useMemo(
-    () => doing?.activities.filter((activity) => activity.type === 0)[0],
-    [doing]
-  );
-
-  useEffect(() => {
-    setActive(doing?.listening_to_spotify || currentActivity);
-  }, [doing, currentActivity])
-
   if (!doing || !doing?.discord_status) return null;
 
   return (
