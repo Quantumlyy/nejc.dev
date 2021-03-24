@@ -20,7 +20,9 @@ const pathnameOffsets: { [key: string]: number } = {
   "/etc": 117,
 };
 
-const Nav = () => {
+const Nav = (
+  { current, setActive }: { current: boolean, setActive: (active: boolean) => void },
+) => {
   const history = useHistory();
   const { pathname } = useLocation();
 
@@ -28,7 +30,6 @@ const Nav = () => {
 
   const [dragYOffset, setDragYOffset] = useState(0);
   const [openOnMobile, setOpenOnMobile] = useState(false);
-  const [presenceActive, setPresenceActive] = useState(false);
 
   const dragConstraintsRef = useRef(null);
 
@@ -113,7 +114,7 @@ const Nav = () => {
             <a href="https://github.com/quantumlytangled"><GitHubLogo /></a>
             <a href="https://keybase.io/quantumlytangled"><KeyIcon /></a>
           </Icons>
-          <Doing style={{display: presenceActive ? 'block' : 'none'}} setActive={setPresenceActive} />
+          <Doing style={{display: current ? 'block' : 'none'}} setActive={setActive} />
         </Items>
       </Container>
     </>

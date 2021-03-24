@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import Nav from "./components/Nav";
@@ -9,11 +10,14 @@ import Presence from "./pages/Presence";
 import Where from "./pages/Where";
 
 function App() {
+
+  const [presenceActive, setPresenceActive] = useState(false);
+
   return (
     <Wrapper>
       <MainContent>
         <Router>
-          <Nav />
+          <Nav current={presenceActive} setActive={setPresenceActive} />
 
           <ContentWrapper>
             <AnimatePresence>
