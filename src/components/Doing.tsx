@@ -12,9 +12,10 @@ const Doing = (
     currentActivity,
     ...props
   }: {
-    setActive: (active: boolean) => void
-    doing?: Presence,
-    currentActivity?: Activity
+    setActive: (active: boolean) => void;
+    doing?: Presence;
+    currentActivity?: Activity;
+    style: any;
   },
   ref: any
 ) => {
