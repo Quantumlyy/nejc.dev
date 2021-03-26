@@ -15,7 +15,7 @@ const Doing = (
     setActive: (active: boolean) => void
     doing?: Presence,
     currentActivity?: Activity
-  } & any,
+  },
   ref: any
 ) => {
   if (!doing || !doing?.discord_status) return null;
@@ -30,8 +30,14 @@ const Doing = (
           <>
             <ActivityRow>
               <ActivityImageContainer>
-                <ActivityImage src={doing.spotify.album_art_url} />
-                <ActivitySecondaryImage src={SpotifyLogo} />
+                <ActivityImage
+                  src={doing.spotify.album_art_url}
+                  alt={doing.spotify.album ?? doing.spotify.song ?? ""}
+                />
+                <ActivitySecondaryImage
+                  src={SpotifyLogo}
+                  alt={"Spotify logo"}
+                />
               </ActivityImageContainer>
 
               <ActivityInfo>
@@ -50,9 +56,11 @@ const Doing = (
               <ActivityImageContainer>
                 <ActivityImage
                   src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`}
+                  alt={currentActivity.assets.large_text ?? ""}
                 />
                 <ActivitySecondaryImage
                   src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`}
+                  alt={currentActivity.assets.small_text ?? ""}
                 />
               </ActivityImageContainer>
             ) : null}
