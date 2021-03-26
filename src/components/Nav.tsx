@@ -6,6 +6,7 @@ import styled from "styled-components";
 import {
   GitHubLogo,
   KeyIcon,
+  LinkedinLogo,
   MenuIcon,
   TwitterLogo,
   XIcon,
@@ -123,7 +124,8 @@ const Nav = (
           <Icons>
             <a href="https://twitter.com/quantumlytngld"><TwitterLogo /></a>
             <a href="https://github.com/quantumlytangled"><GitHubLogo /></a>
-            <a href="https://keybase.io/quantumlytangled"><KeyIcon /></a>
+            <a href="https://keybase.io/quantumly"><KeyIcon /></a>
+            <a href="https://www.linkedin.com/in/nejc-drobnic"><LinkedinLogo /></a>
           </Icons>
           <Doing style={{display: current ? 'block' : 'none'}} setActive={setActive} currentActivity={currentActivity} doing={doing} />
         </Items>
