@@ -13,7 +13,6 @@ import { Presence as LanyardPresence } from "./types/lanyard";
 import { EventType, Operation, SocketEvent } from "./types/lanyardSocket";
 
 const logLanyardEvent = (eventName: string, data: unknown) => {
-  // eslint-disable-next-line no-console
   console.log(
     `%cLanyard%c <~ ${eventName} %o`,
     "background-color: #d7bb87; border-radius: 5px; padding: 3px; color: #372910;",
@@ -75,7 +74,12 @@ function App() {
     <Wrapper>
       <MainContent>
         <Router>
-          <Nav current={presenceActive} setActive={setPresenceActive} currentActivity={currentActivity} doing={doing} />
+          <Nav
+            current={presenceActive}
+            setActive={setPresenceActive}
+            currentActivity={currentActivity}
+            doing={doing}
+          />
 
           <ContentWrapper>
             <AnimatePresence>

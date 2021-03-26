@@ -1,14 +1,15 @@
-import PageWrapper from "./PageWrapper";
+import { ElixirLogo, GoLogo, RabbitMQLogo, ReactLogo, TypescriptLogo } from "../components/Icons";
 import Technology from "../components/Technology";
-import { ElixirLogo, RabbitMQLogo, ReactLogo, RustLogo, TypescriptLogo } from "../components/Icons"
+import PageWrapper from "./PageWrapper";
 
 const How = () => {
+
   return (
     <PageWrapper>
       <h1>How I Do It</h1>
       <p>
         I highly leverage new bleeding-edge technologies and languages like
-        Elixir to stay on top of the game. You can find a list of my most-used
+        Elixir and Go to stay on top of the game. You can find a list of my most-used
         technologies below.
       </p>
 
@@ -33,6 +34,16 @@ const How = () => {
       />
 
       <Technology
+        color="#00acd7"
+        icon={<GoLogo />}
+        name="Go"
+        type="Backend"
+        useCase={
+          "It makes it easy to build simple, reliable, and efficient software."
+        }
+      />
+
+      {/* <Technology
         color="#dea584"
         icon={<RustLogo/>}
         name="Rust"
@@ -40,13 +51,13 @@ const How = () => {
         useCase={
           "Optimizing parts of Elixir code using Rust NIFs and writing efficient system code"
         }
-      />
+      /> */}
 
       <Technology
         color="#007acc"
         icon={<TypescriptLogo/>}
         name="TypeScript"
-        type="JS Framework"
+        type="JS Superset"
         useCase={
           "Types for JS - will save your life when projects expand"
         }
