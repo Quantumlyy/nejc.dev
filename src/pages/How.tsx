@@ -21,6 +21,7 @@ const How = () => {
         useCase={
           "Building fault-tolerant realtime systems that scale out across multiple nodes"
         }
+        url={"https://elixir-lang.org/"}
       />
 
       <Technology
@@ -31,6 +32,7 @@ const How = () => {
         useCase={
           "Constructing stateful and durable frontends for large and interactive web apps"
         }
+        url={"https://reactjs.org/"}
       />
 
       <Technology
@@ -41,6 +43,7 @@ const How = () => {
         useCase={
           "It makes it easy to build simple, reliable, and efficient software."
         }
+        url={"https://golang.org/"}
       />
 
       <Technology
@@ -51,6 +54,7 @@ const How = () => {
         useCase={
           "Optimizing parts of Elixir code using Rust NIFs and writing efficient system code"
         }
+        url={"https://www.rust-lang.org/"}
       />
 
       <Technology
@@ -61,6 +65,7 @@ const How = () => {
         useCase={
           "Types for JS - will save your life when projects expand"
         }
+        url={"https://www.typescriptlang.org/"}
       />
 
       <Technology
@@ -71,6 +76,7 @@ const How = () => {
         useCase={
           "Messaging between different services in a robust & durable way"
         }
+        url={"https://www.rabbitmq.com/"}
       />
     </PageWrapper>
   );
