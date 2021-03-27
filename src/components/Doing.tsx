@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import SpotifyLogo from '../assets/images/spotify-logo.svg';
 import { Activity, Presence } from "../types/lanyard";
+import Progress from "./Progress";
 
 const Doing = (
   {
@@ -19,7 +20,16 @@ const Doing = (
   },
   ref: any
 ) => {
+  const [tempState, setTempState] = useState(0);
   if (!doing || !doing?.discord_status) return null;
+  const currentDate = new Date();
+
+  // TODO: use useEffect to destroy interval on state change
+  if (doing?.listening_to_spotify && doing.spotify.timestamps.end) {
+    setInterval(() => {
+      setTempState(tempState + 1);
+    }, 1000);
+  }
 
   return (
     <>
@@ -46,6 +56,9 @@ const Doing = (
                 <p>by {doing.spotify.artist}</p>
               </ActivityInfo>
             </ActivityRow>
+            {doing.spotify.timestamps.end ? (
+              <Progress percentage={100 * (currentDate.getTime() - doing.spotify.timestamps.start) / (doing.spotify.timestamps.end - doing.spotify.timestamps.start)} />
+            ) : null}
           </>
         </Container>
       ) : null}
@@ -87,10 +100,12 @@ const Container = styled(motion(Link))`
   border-top: 1px solid #101010;
   padding: 1rem;
   cursor: pointer;
+
   &:hover {
     background-color: #101010;
     color: #fff;
   }
+
   h5 {
     margin: 0;
     margin-bottom: 10px;
@@ -150,10 +165,12 @@ const ActivitySecondaryImage = styled.img`
 
 const ActivityInfo = styled.div`
   margin-left: 1rem;
+
   h5 {
     color: #fff;
     margin: 0;
   }
+
   p {
     margin: 0;
     font-size: 0.8rem;

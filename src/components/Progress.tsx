@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-const Progress = ({percentage}: {percentage: number}) => {
+const Progress = ({
+  percentage
+}: {
+  percentage: number
+}) => {
   return (
     <Container>
       <ProgressFill initial={false} transition={{ ease: "easeOut", duration: 2 }} animate={{x: `${percentage - 100}%`}} />
@@ -11,6 +15,7 @@ const Progress = ({percentage}: {percentage: number}) => {
 
 const Container = styled.div`
   width: 100%;
+  margin-top: 10px;
   height: 5px;
   border: 1px solid #ccc;
   overflow: hidden;
