@@ -28,7 +28,7 @@ const Doing = (
   if (doing?.listening_to_spotify && doing.spotify.timestamps.end) {
     setInterval(() => {
       setTempState(tempState + 1);
-    }, 1000);
+    }, 500);
   }
 
   return (
