@@ -1,5 +1,16 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 import styled from "styled-components";
+
+const ConditionalWrapper = ({
+  condition,
+  wrapper,
+  children
+}: {
+  condition: boolean;
+  wrapper: (children: ReactNode) => ReactElement;
+  children: ReactElement;
+}) => 
+  condition ? wrapper(children) : children;
 
 const Technology = ({
   color,
@@ -7,32 +18,50 @@ const Technology = ({
   name,
   type,
   useCase,
+  url
 }: {
   color: string;
   icon: ReactElement;
   name: string;
   type: string;
   useCase: string;
+  url?: string;
 }) => {
   return (
-    <Container>
-      <Head color={color}>{icon}</Head>
+    <>
+      <ConditionalWrapper
+        condition={url !== undefined}
+        wrapper={(children) => <A href={url} target="_blank" rel="noopener">{children}</A>}
+      >
+        <Container>
+          <Head color={color}>{icon}</Head>
 
-      <Column forceWidth={110}>
-        <h5>name</h5>
-        <p>{name}</p>
-      </Column>
-      <Column forceWidth={200}>
-        <h5>type</h5>
-        <p>{type}</p>
-      </Column>
-      <Column noBorder>
-        <h5>use case</h5>
-        <p>{useCase}</p>
-      </Column>
-    </Container>
+          <Column forceWidth={110}>
+            <h5>name</h5>
+            <p>{name}</p>
+          </Column>
+          <Column forceWidth={200}>
+            <h5>type</h5>
+            <p>{type}</p>
+          </Column>
+          <Column noBorder>
+            <h5>use case</h5>
+            <p>{useCase}</p>
+          </Column>
+        </Container>
+      </ConditionalWrapper>
+    </>
   );
 };
+
+const A = styled.a`
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
