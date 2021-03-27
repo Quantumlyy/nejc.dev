@@ -1,4 +1,4 @@
-import { ElixirLogo, GoLogo, RabbitMQLogo, ReactLogo, TypescriptLogo } from "../components/Icons";
+import { ElixirLogo, GoLogo, RabbitMQLogo, ReactLogo, RustLogo, TypescriptLogo } from "../components/Icons";
 import Technology from "../components/Technology";
 import PageWrapper from "./PageWrapper";
 
@@ -35,7 +35,7 @@ const How = () => {
 
       <Technology
         color="#00acd7"
-        icon={<GoLogo />}
+        icon={<GoLogo/>}
         name="Go"
         type="Backend"
         useCase={
@@ -43,7 +43,7 @@ const How = () => {
         }
       />
 
-      {/* <Technology
+      <Technology
         color="#dea584"
         icon={<RustLogo/>}
         name="Rust"
@@ -51,7 +51,7 @@ const How = () => {
         useCase={
           "Optimizing parts of Elixir code using Rust NIFs and writing efficient system code"
         }
-      /> */}
+      />
 
       <Technology
         color="#007acc"
