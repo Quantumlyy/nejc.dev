@@ -68,14 +68,18 @@ const Doing = (
           <ActivityRow>
             {currentActivity.assets ? (
               <ActivityImageContainer>
-                <ActivityImage
-                  src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`}
-                  alt={currentActivity.assets.large_text ?? ""}
-                />
-                <ActivitySecondaryImage
-                  src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`}
-                  alt={currentActivity.assets.small_text ?? ""}
-                />
+                {currentActivity.assets.large_image ? (
+                  <ActivityImage
+                    src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`}
+                    alt={currentActivity.assets.large_text ?? ""}
+                  />
+                ) : null}
+                {currentActivity.assets.small_image ? (
+                  <ActivitySecondaryImage
+                    src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`}
+                    alt={currentActivity.assets.small_text ?? ""}
+                  />
+                ) : null}
               </ActivityImageContainer>
             ) : null}
             <ActivityInfo>
