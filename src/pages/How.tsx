@@ -30,7 +30,7 @@ const How = () => {
 				url={'https://reactjs.org/'}
 			/>
 
-			<Technology
+			{/* <Technology
 				color="#00acd7"
 				icon={<GoLogo />}
 				name="Go"
@@ -46,7 +46,7 @@ const How = () => {
 				type="Backend, System"
 				useCase={'Optimizing parts of Elixir code using Rust NIFs and writing efficient system code'}
 				url={'https://www.rust-lang.org/'}
-			/>
+			/> */}
 
 			<Technology
 				color="#007acc"
