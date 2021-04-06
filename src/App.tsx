@@ -30,10 +30,9 @@ function App() {
 		if (socket !== null) socket.send(JSON.stringify({ op, d }));
 	};
 
-	// @ts-expect-error Not all code paths return a value.
 	useEffect(() => {
 		// eslint-disable-next-line @typescript-eslint/no-empty-function
-		if (socket === null) return () => {};
+		if (socket === null) return;
 
 		socket.onmessage = ({ data }: MessageEvent): void => {
 			const { op, t, d }: SocketEvent = JSON.parse(data);
