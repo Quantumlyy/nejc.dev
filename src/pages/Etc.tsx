@@ -25,6 +25,9 @@ const Etc = () => (
 			<li>
 				<Link to={'/presence'}>/presence</Link>
 			</li>
+			<li>
+				Primary ETH Address: <code>0x1c5d3f08c244F7a684dC10d56C3b2a884C29ae8A</code>
+			</li>
 		</ul>
 	</PageWrapper>
 );
