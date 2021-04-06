@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export enum Language {
+	Multiple = 'Multiple',
 	Elixir = 'Elixir',
 	TypeScript = 'TypeScript'
 }

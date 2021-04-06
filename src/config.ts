@@ -22,6 +22,12 @@ export const config: Config = {
 			url: 'https://github.com/skyra-project/skyra',
 			lang: Language.TypeScript,
 			description: "All-in-one multipurpose Discord Bot designed to carry out most of your server's needs with great performance and stability."
+		},
+		{
+			name: 'Pengulets',
+			url: 'https://github.com/Pengulets',
+			lang: Language.Multiple,
+			description: 'Set of 128 uniquely generated digital pengion NFT collectibles on the Ethereum and BSC blockchain'
 		}
 	]
 };
