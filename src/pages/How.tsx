@@ -1,5 +1,4 @@
-import React from 'react';
-import { ElixirLogo, GoLogo, RabbitMQLogo, ReactLogo, RustLogo, TypescriptLogo } from '../components/Icons';
+import { ElixirLogo, RabbitMQLogo, ReactLogo, TypescriptLogo } from '../components/Icons';
 import Technology from '../components/Technology';
 import PageWrapper from './PageWrapper';
 

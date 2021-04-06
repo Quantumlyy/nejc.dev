@@ -1,9 +1,22 @@
 {
-  "extends": "./src/tsconfig.json",
+  "extends": "@sapphire/ts-config",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "module": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "declaration": false,
+    "declarationMap": false,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "skipLibCheck": true
+  },
   "include": [
     "src"
-  ],
-  "compilerOptions": {
-    "jsx": "react-jsx"
-  }
+  ]
 }

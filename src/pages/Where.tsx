@@ -1,4 +1,3 @@
-import React from 'react';
 import Repo from '../components/Repo';
 import { config } from '../config';
 import PageWrapper from './PageWrapper';

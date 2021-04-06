@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { forwardRef, useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import SpotifyLogo from '../assets/images/spotify-logo.svg';

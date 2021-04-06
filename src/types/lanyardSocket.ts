@@ -1,6 +1,6 @@
 // Thanks to Tim (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx) for the types
 
-import { Presence } from './lanyard';
+import type { Presence } from './lanyard';
 
 export enum Operation {
 	Event,

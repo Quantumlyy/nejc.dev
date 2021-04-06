@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Presence as LanyardPresence } from '../types/lanyard';
 import PageWrapper from './PageWrapper';
 
