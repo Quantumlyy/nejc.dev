@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import React, { forwardRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-// @ts-expect-error Cannot find module '../assets/images/spotify-logo.svg' or its corresponding type declarations.
 import SpotifyLogo from '../assets/images/spotify-logo.svg';
 import type { Activity, Presence } from '../types/lanyard';
 import Progress from './Progress';
@@ -43,7 +42,7 @@ const Doing = (
 						<ActivityRow>
 							<ActivityImageContainer>
 								<ActivityImage src={doing.spotify.album_art_url} alt={doing.spotify.album ?? doing.spotify.song ?? ''} />
-								<ActivitySecondaryImage src={SpotifyLogo} alt={'Spotify logo'} />
+								<ActivitySecondaryImage src={(SpotifyLogo as unknown) as string} alt={'Spotify logo'} />
 							</ActivityImageContainer>
 
 							<ActivityInfo>
