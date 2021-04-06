@@ -1,3 +1,4 @@
+import React from 'react';
 import Repo from '../components/Repo';
 import { config } from '../config';
 import PageWrapper from './PageWrapper';
@@ -26,7 +27,7 @@ const Where = () => {
 
 <h1>Where I've Done It</h1>
 <h3>Companies</h3>
-<CoWrapper>  
+<CoWrapper>
   <Co url="https://hiven.io" name="Hiven" iconReference={HivenAppIcon} tagline="Consumer social" role={"Founder & Developer"} what={"I founded Hiven back in 2019 to make it easy for anyone create premium groups."}/>
   <Co url="https://giggl.app" name="Giggl" iconReference={GigglAppIcon} tagline="Consumer social" role={"Co-founder & Developer"} what={"I helped design and create the backend, realtime infrastructure and the frontend."}/>
   <Co url="https://honk.me" name="Honk" iconReference={HonkAppIcon} tagline="Consumer social" role={"Backend Engineer"} what={"I designed and implemented the realtime infrastructure at Honk using Elixir."}/>

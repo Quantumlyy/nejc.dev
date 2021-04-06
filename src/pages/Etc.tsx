@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { config } from '../config';
 import PageWrapper from './PageWrapper';

@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
-import { forwardRef, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+// @ts-expect-error Cannot find module '../assets/images/spotify-logo.svg' or its corresponding type declarations.
 import SpotifyLogo from '../assets/images/spotify-logo.svg';
-import { Activity, Presence } from '../types/lanyard';
+import type { Activity, Presence } from '../types/lanyard';
 import Progress from './Progress';
 
 const Doing = (
@@ -117,7 +118,7 @@ const fadeInOut = keyframes`
   0% {
     opacity: 0;
   }
-  
+
   50% {
     opacity: 1;
   }

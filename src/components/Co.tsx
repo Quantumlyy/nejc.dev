@@ -1,3 +1,4 @@
+import React from 'react';
 import { animated, useSpring } from 'react-spring';
 import styled from 'styled-components';
 import { ExternalLinkIcon } from './Icons';
@@ -26,8 +27,7 @@ const Co = ({
 		<A href={url} target="_blank" rel="noopener">
 			<Container
 				onMouseMove={({ clientX: x, clientY: y }: { clientX: number; clientY: number }) => set({ xys: calc(x, y) })}
-				onMouseLeave={() => set({ xys: [0, 0, 1] })}
-				// @ts-ignore
+				// @ts-expect-error No overload matches this call.
 				style={{ transform: props.xys.interpolate(trans) }}
 			>
 				<Header>

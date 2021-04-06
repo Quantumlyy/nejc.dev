@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Nav from './components/Nav';
@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import How from './pages/How';
 import Presence from './pages/Presence';
 import Where from './pages/Where';
-import { Presence as LanyardPresence } from './types/lanyard';
+import type { Presence as LanyardPresence } from './types/lanyard';
 import { EventType, Operation, SocketEvent } from './types/lanyardSocket';
 
 const logLanyardEvent = (eventName: string, data: unknown) => {
@@ -30,10 +30,12 @@ function App() {
 		if (socket !== null) socket.send(JSON.stringify({ op, d }));
 	};
 
+	// @ts-expect-error Not all code paths return a value.
 	useEffect(() => {
+		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		if (socket === null) return () => {};
 
-		socket.onmessage = function ({ data }: MessageEvent): void {
+		socket.onmessage = ({ data }: MessageEvent): void => {
 			const { op, t, d }: SocketEvent = JSON.parse(data);
 
 			if (op === Operation.Hello) {
@@ -49,6 +51,7 @@ function App() {
 		socket.onclose = () => {
 			setSocket(null);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [socket]);
 
 	useEffect(() => {

@@ -1,12 +1,12 @@
 import { motion, PanInfo } from 'framer-motion';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { GitHubLogo, KeyIcon, LinkedinLogo, MenuIcon, TwitterLogo, XIcon } from './Icons';
 import Doing from './Doing';
 import useSound from 'use-sound';
-import { Activity, Presence } from '../types/lanyard';
+import type { Activity, Presence } from '../types/lanyard';
 
 const pathnameOffsets: { [key: string]: number } = {
 	'/': 0,
@@ -39,7 +39,7 @@ const Nav = ({
 	useEffect(() => {
 		if (openOnMobile) setOpenOnMobile(false);
 		playSwitchPageSound();
-	}, [pathname]);
+	}, [openOnMobile, pathname, playSwitchPageSound]);
 
 	const pageIndicatorOffset = useMemo(() => (pathname ? pathnameOffsets[pathname] ?? -120 : 0), [pathname]);
 
@@ -70,7 +70,7 @@ const Nav = ({
 				{openOnMobile ? <XIcon onClick={toggleMobileMenu} /> : <MenuIcon onClick={toggleMobileMenu} />}
 			</MobileHeader>
 			<Container openOnMobile={openOnMobile}>
-				{!openOnMobile ? (
+				{openOnMobile ? null : (
 					<PageIndicator
 						whileHover={{ width: 3 }}
 						drag="y"
@@ -78,16 +78,16 @@ const Nav = ({
 						dragConstraints={dragConstraintsRef}
 						animate={{ top: pageIndicatorOffsetWithDecoration }}
 					/>
-				) : null}
+				)}
 				<Items>
-					{!openOnMobile ? (
+					{openOnMobile ? null : (
 						<Row>
 							<Title>Nejc Drobnič</Title>
 							{/* <IconButton>
-              <ChevronDown />
-            </IconButton> */}
+								<ChevronDown />
+							</IconButton> */}
 						</Row>
-					) : null}
+					)}
 					<div ref={dragConstraintsRef}>
 						<Page active={pathname === '/' ? 1 : 0} to="/">
 							what I do

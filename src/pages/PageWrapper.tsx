@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 
 const pageVariants = {
 	initial: {

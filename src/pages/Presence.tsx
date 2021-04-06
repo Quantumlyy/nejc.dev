@@ -1,9 +1,15 @@
+import React from 'react';
+import type { Presence as LanyardPresence } from '../types/lanyard';
 import PageWrapper from './PageWrapper';
-import { Presence as LanyardPresence } from '../types/lanyard';
 
 const Presence = ({ doing }: { doing?: LanyardPresence }) => (
 	<PageWrapper forceReadableWidth>
-		<h1>👀 Presence</h1>
+		<h1>
+			<span role="img" aria-label="eyes">
+				👀
+			</span>{' '}
+			Presence
+		</h1>
 		<p>
 			You may have noticed that while I'm doing something like listening to Spotify, programming in VSCode or playing a game, it'll appear in
 			the bottom left of my site. This is thanks to an open-source project called <a href={'https://github.com/phineas/lanyard'}>Lanyard</a>{' '}
