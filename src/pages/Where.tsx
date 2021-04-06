@@ -1,6 +1,6 @@
-import Repo from "../components/Repo";
-import { config } from "../config";
-import PageWrapper from "./PageWrapper";
+import Repo from '../components/Repo';
+import { config } from '../config';
+import PageWrapper from './PageWrapper';
 /*
 import Co from "../components/Co";
 import styled from "styled-components";
@@ -10,17 +10,17 @@ import HonkAppIcon from '../assets/images/honk-app-icon.jpg';
 */
 
 const Where = () => {
-  const repoElements = config.repos.map(({ name, url, lang, description }, i) => (
-    <Repo key={i} name={name} url={url} primaryLanguage={lang} description={description} />
-  ));
+	const repoElements = config.repos.map(({ name, url, lang, description }, i) => (
+		<Repo key={i} name={name} url={url} primaryLanguage={lang} description={description} />
+	));
 
-  return (
-    <PageWrapper>
-      <h3>Open-source Projects</h3>
-      <div>{ repoElements }</div>
-    </PageWrapper>
-  )
-}
+	return (
+		<PageWrapper>
+			<h3>Open-source Projects</h3>
+			<div>{repoElements}</div>
+		</PageWrapper>
+	);
+};
 
 /*
 
