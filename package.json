@@ -5,6 +5,8 @@
   "private": true,
   "dependencies": {
     "framer-motion": "^4.0.0",
+    "i18next": "^20.2.1",
+    "i18next-http-backend": "^1.2.1",
     "is-svg": "4.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -26,6 +28,7 @@
     "@types/node": "^14.14.37",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
+    "@types/react-i18next": "^8.1.0",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
