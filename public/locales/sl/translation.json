@@ -1,1 +1,10 @@
-{}
+{
+    "pages": {
+        "etc": {
+            "thanks": "Zahvale",
+            "contact": "Kontakt",
+            "other": "Drugo",
+            "ethAddress": "Glavni ETH Naslov"
+        }
+    }
+}
