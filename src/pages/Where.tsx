@@ -1,5 +1,4 @@
-import Repo from '../components/Repo';
-import { config } from '../config';
+import Repo, { Language } from '../components/Repo';
 import PageWrapper from './PageWrapper';
 /*
 import Co from "../components/Co";
@@ -10,14 +9,24 @@ import HonkAppIcon from '../assets/images/honk-app-icon.jpg';
 */
 
 const Where = () => {
-	const repoElements = config.repos.map(({ name, url, lang, description }, i) => (
-		<Repo key={i} name={name} url={url} primaryLanguage={lang} description={description} />
-	));
-
 	return (
 		<PageWrapper>
 			<h3>Open-source Projects</h3>
-			<div>{repoElements}</div>
+			<div>
+				<Repo
+					name="Skyra"
+					url="https://github.com/skyra-project/skyra"
+					primaryLanguage={Language.TypeScript}
+					description="All-in-one multipurpose Discord Bot designed to carry out most of your server's needs with great performance and stability."
+				/>
+
+				<Repo
+					name="Pengulets"
+					url="https://github.com/Pengulets"
+					primaryLanguage={Language.Multiple}
+					description="Set of 128 uniquely generated digital pengion NFT collectibles on the Ethereum and BSC blockchain"
+				/>
+			</div>
 		</PageWrapper>
 	);
 };
