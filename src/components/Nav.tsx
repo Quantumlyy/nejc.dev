@@ -37,9 +37,13 @@ const Nav = ({
 	const dragConstraintsRef = useRef(null);
 
 	useEffect(() => {
-		if (openOnMobile) setOpenOnMobile(false);
 		playSwitchPageSound();
 	}, [openOnMobile, pathname, playSwitchPageSound]);
+
+	useEffect(() => {
+		if (openOnMobile) setOpenOnMobile(false);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [pathname]);
 
 	const pageIndicatorOffset = useMemo(() => (pathname ? pathnameOffsets[pathname] ?? -120 : 0), [pathname]);
 
