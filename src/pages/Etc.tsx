@@ -11,8 +11,8 @@ const Etc = () => {
 			<h1>/etc</h1>
 			<h2>{t('pages.etc.thanks')}</h2>
 			<p>
-				I did a rework of the basic <a href={'https://github.com/phineas/phineas.io'}>phineas/phineas.io</a> site and improved each component,{' '}
-				thank you to him for this wonderful design and example which saved me a lot of time.
+				I did a rework of the basic <a href={'https://github.com/phineas/phineas.io'}>phineas/phineas.io</a> site and improved each component.
+				I would like to thank him for this wonderful design and example which saved me a lot of time.
 			</p>
 			<p>
 				The source code for this website is available at{' '}
