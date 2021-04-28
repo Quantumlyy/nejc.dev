@@ -109,6 +109,7 @@ const LanguageColorBlip = styled.span<{ color: string }>`
 	height: 10px;
 	border-radius: 50%;
 	background-color: ${({ color }) => color};
+	border: 1px white solid;
 	margin-left: 5px;
 `;
 
