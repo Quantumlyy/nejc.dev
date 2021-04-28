@@ -4,7 +4,8 @@
             "thanks": "Thanks",
             "contact": "Contact",
             "other": "Other",
-            "ethAddress": "Primary ETH Address"
+            "ethAddress": "Primary ETH Address",
+            "bscAddress": "Primary BSC Address"
         }
     }
 }

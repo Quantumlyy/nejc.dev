@@ -15,7 +15,6 @@ const Presence = ({ doing }: { doing?: LanyardPresence }) => (
 			which pulls live presences from Discord and updates an API and WebSocket service. It takes {'<'}10 seconds to set up, you just have to
 			join a Discord server!
 		</p>
-
 		<>
 			{doing?.listening_to_spotify ? (
 				<p>

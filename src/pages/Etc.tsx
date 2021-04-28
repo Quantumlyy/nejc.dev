@@ -31,6 +31,9 @@ const Etc = () => {
 				<li>
 					{t('pages.etc.ethAddress')}: <code>0x1c5d3f08c244F7a684dC10d56C3b2a884C29ae8A</code>
 				</li>
+				<li>
+					{t('pages.etc.bscAddress')}: <code>0xEfa20fbC58637dE44e3E3d74AB34348B48aFe2d4</code>
+				</li>
 			</ul>
 		</PageWrapper>
 	);
