@@ -14,17 +14,28 @@ const Where = () => {
 			<h3>Open-source Projects</h3>
 			<div>
 				<Repo
+					name="Odloki in Zakoni"
+					url="https://github.com/QuantumlyTangled/odloki-zakoni"
+					primaryLanguage={Language.TypeScript}
+					description="Private web interface for viewing laws and orders relavant to the inspectors of the local municipality."
+				/>
+				<Repo
 					name="Skyra"
 					url="https://github.com/skyra-project/skyra"
 					primaryLanguage={Language.TypeScript}
 					description="All-in-one multipurpose Discord Bot designed to carry out most of your server's needs with great performance and stability."
 				/>
-
+				<Repo
+					name="Waifusion"
+					url="https://github.com/waifusion"
+					primaryLanguage={Language.Multiple}
+					description="Set of 16384 uniquely generated digital waifu NFT collectibles on the Ethereum blockchain."
+				/>
 				<Repo
 					name="Pengulets"
 					url="https://github.com/Pengulets"
 					primaryLanguage={Language.Multiple}
-					description="Set of 128 uniquely generated digital pengion NFT collectibles on the Ethereum and BSC blockchain"
+					description="Set of 128 uniquely generated digital pengion NFT collectibles on the Ethereum and BSC blockchain."
 				/>
 			</div>
 		</PageWrapper>
