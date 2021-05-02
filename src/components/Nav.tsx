@@ -9,7 +9,7 @@ const Nav: React.FC = ({ children }) => {
 		<div className="md:flex flex-col md:flex-row md:min-h-screen w-full">
 			<Disclosure
 				as="div"
-				className="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0"
+				className="flex flex-col w-full md:w-64 text-gray-700 bg-white border border-black dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0"
 			>
 				{({ open }) => (
 					<>
@@ -50,6 +50,13 @@ const Nav: React.FC = ({ children }) => {
 								</span>
 							</Link>
 						</nav>
+						<div
+							className={`${
+								open ? 'block' : 'hidden'
+							} flex-grow md:border border-l-0 border-r-0 border-b-0 border-black md:block px-4 pb-4 md:pb-0 md:overflow-y-auto`}
+						>
+							Hey
+						</div>
 
 						<Disclosure.Panel className="lg:hidden">
 							<div className="px-2 pt-2 pb-3 space-y-1 shadow-lg"></div>
