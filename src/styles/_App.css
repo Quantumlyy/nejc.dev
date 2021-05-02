@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+    .wrapper {
+        @apply flex items-center justify-center h-screen;
+    }
+    .contentMain {
+        @apply h-screen w-full absolute flex flex-row overflow-y-auto md:flex-col;
+    }
+    .contentWrapper {
+        @apply ml-60 p-8 w-full box-border text-base md:ml-0 md:pt-16;
+    }
+}

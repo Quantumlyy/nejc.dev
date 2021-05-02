@@ -8,7 +8,13 @@ import 'styles/_App.css';
 const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 	return (
 		<ReduxProvider store={store}>
-			<Component {...pageProps} />
+			<div className="wrapper">
+				<div className="contentMain">
+					<div className="contentWrapper">
+						<Component {...pageProps} />
+					</div>
+				</div>
+			</div>
 		</ReduxProvider>
 	);
 };
