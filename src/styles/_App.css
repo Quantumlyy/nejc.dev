@@ -4,13 +4,13 @@
 
 @layer base {
   html {
-    @apply h-full bg-black;
+    @apply h-screen bg-black;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
   }
 
   body {
-    @apply box-border min-h-full grid text-slightlyNotWhite m-0;
+    @apply box-border min-h-screen grid text-slightlyNotWhite m-0;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
