@@ -1,11 +1,11 @@
-import { toWords } from 'number-to-words';
-import React, { useState } from 'react';
-import { Consts } from 'core/consts';
+import DiscordContactRow from 'components/DiscordContactRow';
 import day from 'dayjs';
-import Link from 'next/link';
 import Layout from 'layouts/Layout';
-import { FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
-import { FaDiscord, FaKeybase } from 'react-icons/fa';
+import Link from 'next/link';
+import { toWords } from 'number-to-words';
+import React from 'react';
+import { FaKeybase } from 'react-icons/fa';
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const birthday = day('21 September 2003').toDate();
 const age = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() - 1970);
@@ -47,20 +47,3 @@ export default function About() {
 		</div>
 	);
 }
-
-export const DiscordContactRow = () => {
-	const [message, setMessage] = useState(Consts.DiscordUsername);
-
-	const copy = async () => {
-		await navigator.clipboard.writeText(Consts.DiscordUsername);
-		setMessage('Copied ✔');
-		await new Promise((r) => setTimeout(r, 1500));
-		setMessage(Consts.DiscordUsername);
-	};
-
-	return (
-		<a href="#" onClick={copy} className="flex items-center space-x-3">
-			<FaDiscord /> <span>{message}</span>
-		</a>
-	);
-};
