@@ -1,6 +1,6 @@
 ---
 title: "Github Enterprise on Proxmox"
-excerpt: "Since GHE provides a QCOW2 images I decided to actually use it, since we use Proxmox that's what I will be focussing on in this post."
+excerpt: "GHE provides a QCOW2 image that seems easy enough to use, so let's explain it! Since we use Proxmox that's what we will be focussing on in this post."
 cover: "/blog/covers/servers.jpg"
 date: "2021-05-04T10:53:12.000Z"
 tags: "github, kvm, proxmox, tutorial"
