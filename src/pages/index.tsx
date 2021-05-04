@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Icon from 'components/Icon';
 import Icons from 'components/Icons';
 import LargeTitle from 'components/LargeTitle';
@@ -39,7 +40,9 @@ const Index: NextPage = () => {
 		<Layout>
 			<div className="flex">
 				<Link href="/about" passHref>
-					<a className="flex-1">About me</a>
+					<a aria-label="About" className="flex-1">
+						About me
+					</a>
 				</Link>
 				<p>TypeScript + React (NextJS) + Node.js</p>
 			</div>

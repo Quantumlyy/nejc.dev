@@ -13,9 +13,9 @@ export const DiscordContactRow: React.FC = () => {
 	};
 
 	return (
-		<a href="#" onClick={copy} className="flex items-center space-x-3">
+		<button onClick={copy} className="flex items-center space-x-3">
 			<FaDiscord /> <span>{message}</span>
-		</a>
+		</button>
 	);
 };
 
