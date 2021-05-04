@@ -3,7 +3,7 @@ import type { DefaultSeoProps as DefaultSeoPropsType } from 'next-seo';
 export const BaseUrl = 'https://quantumly.dev';
 export const DefaultSEOProps: DefaultSeoPropsType = {
 	titleTemplate: 'Nejc Drobnič | %s',
-	title: 'Nejc Drobnič',
+	title: 'Home',
 	description: 'Nejc Drobnič, Full–stack TypeScript engineer from Slovenia',
 	canonical: BaseUrl,
 	openGraph: {
