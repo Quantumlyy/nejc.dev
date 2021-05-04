@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev src -p 3000",
-    "prebuild": "yarn build:sitemap",
     "build": "next build src",
-    "build:sitemap": "node scripts/sitemapGenerator.mjs",
     "clean": "rimraf src/.next src/public/sw.js src/public/workbox* src/public/sitemap.xml",
     "start": "next start src"
   },

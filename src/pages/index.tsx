@@ -3,8 +3,10 @@ import Icon from 'components/Icon';
 import Icons from 'components/Icons';
 import LargeTitle from 'components/LargeTitle';
 import Layout from 'layouts/Layout';
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
+import path from 'path';
 import Link from 'next/link';
+import sitemapGenerator from 'nextjs-sitemap-generator';
 import React from 'react';
 import {
 	SiAmazonaws,
@@ -87,6 +89,20 @@ const Index: NextPage = () => {
 			</div> */}
 		</Layout>
 	);
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+	const directory = path.join(process.cwd(), 'src');
+
+	await sitemapGenerator({
+		baseUrl: 'https://quantumly.dev',
+		pagesDirectory: path.join(directory, 'pages'),
+		targetDirectory: path.join(directory, 'public'),
+		nextConfigPath: path.join(directory, 'next.config.js'),
+		ignoredPaths: []
+	});
+
+	return { props: {} };
 };
 
 export default Index;
