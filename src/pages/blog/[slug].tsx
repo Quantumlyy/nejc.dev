@@ -28,6 +28,7 @@ const Slug: NextPage<SlugProps> = ({ post, content: mdxContent }) => {
 					title: post.title,
 					description: post.excerpt,
 					article: { authors: [post.author.name], tags: post.tags.split(', ') },
+					type: 'website',
 					images: [
 						{ alt: `Cover image for ${post.title}`, url: `https://quantumly.dev${post.cover}` },
 						{ alt: `Image of ${post.author.name}`, url: `https://quantumly.dev${post.author.avatar}` }
