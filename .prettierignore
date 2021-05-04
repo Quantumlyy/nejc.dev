@@ -1,3 +1,5 @@
 node_modules/
 dist/
-build/
+src/.next/
+src/public/sw.js
+src/public/workbox*

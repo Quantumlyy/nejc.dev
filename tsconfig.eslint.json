@@ -1,9 +1,10 @@
 {
-	"extends": "./tsconfig.json",
+	"extends": "./src/tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": ".",
 		"allowJs": true,
 		"checkJs": true
 	},
-	"include": ["scripts", "src", "*.config.js"]
+	"include": ["scripts", "src", "*.config.js"],
+	"exclude": ["src/next-env.d.ts", "src/next.config.js"]
 }
