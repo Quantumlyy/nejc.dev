@@ -11,6 +11,12 @@ class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Space+Mono:wght@700&display=swap"
 						rel="stylesheet"
 					/>
+
+					<script
+						defer
+						src="https://static.cloudflareinsights.com/beacon.min.js"
+						data-cf-beacon='{"token": "58ddc6f40c044ab3aeaa858a4d9e4354"}'
+					></script>
 				</Head>
 				<body>
 					<Main />
