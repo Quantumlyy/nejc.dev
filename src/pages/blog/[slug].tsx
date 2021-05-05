@@ -8,6 +8,7 @@ import renderToString from 'next-mdx-remote/render-to-string';
 import type { MdxRemote } from 'next-mdx-remote/types';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import 'prism-themes/themes/prism-coldark-dark.css';
 import React from 'react';
 
@@ -17,6 +18,7 @@ interface SlugProps {
 }
 
 const Slug: NextPage<SlugProps> = ({ post, content: mdxContent }) => {
+	const router = useRouter();
 	const content = hydrate(mdxContent);
 
 	return (
@@ -24,6 +26,7 @@ const Slug: NextPage<SlugProps> = ({ post, content: mdxContent }) => {
 			<NextSeo
 				title={post.title}
 				description={post.excerpt}
+				canonical={`https://quantumly.dev/blog/${router.query.slug}`}
 				openGraph={{
 					title: post.title,
 					description: post.excerpt,
