@@ -12,11 +12,7 @@ class MyDocument extends Document {
 						rel="stylesheet"
 					/>
 
-					<script
-						defer
-						src="https://static.cloudflareinsights.com/beacon.min.js"
-						data-cf-beacon='{"token": "58ddc6f40c044ab3aeaa858a4d9e4354"}'
-					></script>
+					<script async defer data-domain="quantumly.dev" src="https://plausible.io/js/plausible.js"></script>
 				</Head>
 				<body>
 					<Main />
