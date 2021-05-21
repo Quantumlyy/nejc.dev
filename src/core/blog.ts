@@ -13,6 +13,7 @@ export interface Post {
 		avatar: string;
 		github: string;
 		twitter: string;
+		email: string;
 	};
 	date: Date | string;
 	language: 'en';

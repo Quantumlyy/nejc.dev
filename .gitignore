@@ -36,6 +36,7 @@ yarn-error.log*
 # next
 .tsbuildinfo
 sitemap.xml
+src/public/rss/
 
 # credentials
 .env.development

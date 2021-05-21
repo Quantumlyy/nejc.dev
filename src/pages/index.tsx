@@ -2,11 +2,12 @@
 import Icon from 'components/Icon';
 import Icons from 'components/Icons';
 import LargeTitle from 'components/LargeTitle';
+import { generateRssFeed } from 'core/feed';
 import Layout from 'layouts/Layout';
 import type { GetStaticProps, NextPage } from 'next';
-import path from 'path';
 import Link from 'next/link';
 import sitemapGenerator from 'nextjs-sitemap-generator';
+import path from 'path';
 import React from 'react';
 import {
 	SiAmazonaws,
@@ -101,6 +102,8 @@ export const getStaticProps: GetStaticProps = async () => {
 		nextConfigPath: path.join(directory, 'next.config.js'),
 		ignoredPaths: []
 	});
+
+	generateRssFeed(path.join(directory, 'public'));
 
 	return { props: {} };
 };

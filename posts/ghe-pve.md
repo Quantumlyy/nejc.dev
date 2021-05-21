@@ -9,6 +9,7 @@ author:
     avatar: "/authors/quantumly.png"
     twitter: quantumlytngld
     github: quantumlytangled
+    email: "yo@quantumly.dev"
 language: "en"
 ---
 
