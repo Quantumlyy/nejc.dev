@@ -10,6 +10,7 @@ author:
     twitter: quantumlytngld
     github: quantumlytangled
     email: "yo@quantumly.dev"
+    link: "https://quantumly.dev"
 language: "en"
 ---
 

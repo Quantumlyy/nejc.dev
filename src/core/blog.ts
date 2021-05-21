@@ -14,6 +14,7 @@ export interface Post {
 		github: string;
 		twitter: string;
 		email: string;
+		link: string;
 	};
 	date: Date | string;
 	language: 'en';
