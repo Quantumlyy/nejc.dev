@@ -4,7 +4,7 @@ import Layout from 'layouts/Layout';
 import Link from 'next/link';
 import { toWords } from 'number-to-words';
 import React from 'react';
-import { FaKeybase } from 'react-icons/fa';
+import { FaKeybase, FaMastodon } from 'react-icons/fa';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const birthday = day('21 September 2003').toDate();
@@ -28,6 +28,9 @@ export default function About() {
 								</a>
 								<a href="https://github.com/quantumlytangled" className="flex items-center space-x-3">
 									<FiGithub /> <span>quantumlytangled</span>
+								</a>
+								<a href="https://fosstodon.org/@quantumly" className="flex items-center space-x-3">
+									<FaMastodon /> <span>@quantumly@fosstodon.org</span>
 								</a>
 							</div>
 						</div>

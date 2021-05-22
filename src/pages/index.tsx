@@ -12,6 +12,7 @@ import React from 'react';
 import {
 	SiAmazonaws,
 	SiBabel,
+	SiCloudflare,
 	SiCss3,
 	SiDiscord,
 	SiDocker,
@@ -71,6 +72,7 @@ const Index: NextPage = () => {
 							<Icon icon={SiSentry} title="Sentry" />
 							<Icon icon={SiTailwindcss} title="TailwindCSS" />
 							<Icon icon={SiServerless} title="Serverless" />
+							<Icon icon={SiCloudflare} title="Cloudflare" />
 							<Icon icon={SiGit} title="Git" />
 							<Icon icon={SiGithub} title="GitHub" />
 							<Icon icon={SiDiscord} title="Discord" />
