@@ -13,7 +13,6 @@ class MyDocument extends Document {
 					/>
 
 					<script async defer data-domain="quantumly.dev" src="https://stats.quantumly.dev/js/index.js"></script>
-					<meta name="google-site-verification" content="G7Z7VehwlfG7xZyZQax9vG8LxWqR80OGs_LKdZuI0pQ" />
 				</Head>
 				<body>
 					<Main />
