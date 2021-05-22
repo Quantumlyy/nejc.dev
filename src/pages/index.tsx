@@ -3,10 +3,10 @@ import Icon from 'components/Icon';
 import Icons from 'components/Icons';
 import LargeTitle from 'components/LargeTitle';
 import { generateRssFeed } from 'core/feed';
+import { generateSitemap } from 'core/sitemap';
 import Layout from 'layouts/Layout';
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
-import sitemapGenerator from 'nextjs-sitemap-generator';
 import path from 'path';
 import React from 'react';
 import {
@@ -95,14 +95,7 @@ const Index: NextPage = () => {
 export const getStaticProps: GetStaticProps = async () => {
 	const directory = path.join(process.cwd(), 'src');
 
-	await sitemapGenerator({
-		baseUrl: 'https://quantumly.dev',
-		pagesDirectory: path.join(directory, 'pages'),
-		targetDirectory: path.join(directory, 'public'),
-		nextConfigPath: path.join(directory, 'next.config.js'),
-		ignoredPaths: []
-	});
-
+	await generateSitemap(directory);
 	generateRssFeed(path.join(directory, 'public'));
 
 	return { props: {} };
