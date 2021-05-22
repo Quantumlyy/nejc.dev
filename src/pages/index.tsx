@@ -47,7 +47,7 @@ const Index: NextPage = () => {
 						About me
 					</a>
 				</Link>
-				<p>TypeScript + React (NextJS) + Node.js</p>
+				{/* <p>TypeScript + React (NextJS) + Node.js</p> */}
 			</div>
 			<div className="flex flex-1">
 				<div className="flex justify-center flex-col space-y-10">
