@@ -12,7 +12,7 @@ class MyDocument extends Document {
 						rel="stylesheet"
 					/>
 
-					<script async defer data-domain="quantumly.dev" src="https://plausible.io/js/plausible.js"></script>
+					<script async defer data-domain="quantumly.dev" src="https://stats.quantumly.dev/js/index.js"></script>
 				</Head>
 				<body>
 					<Main />
