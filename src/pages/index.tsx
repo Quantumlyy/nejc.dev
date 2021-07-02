@@ -2,6 +2,7 @@
 import Icon from 'components/Icon';
 import Icons from 'components/Icons';
 import LargeTitle from 'components/LargeTitle';
+import Song from 'components/Song';
 import { generateRssFeed } from 'core/feed';
 import { generateSitemap } from 'core/sitemap';
 import Layout from 'layouts/Layout';
@@ -83,6 +84,7 @@ const Index: NextPage = () => {
 							<Icon icon={SiSpotify} title="Spotify" />
 						</Icons>
 					</div>
+					<Song />
 				</div>
 			</div>
 			{/* <div className="flex">

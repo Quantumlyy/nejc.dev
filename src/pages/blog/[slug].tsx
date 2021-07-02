@@ -9,8 +9,8 @@ import type { MdxRemote } from 'next-mdx-remote/types';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import 'prism-themes/themes/prism-coldark-dark.css';
 import React from 'react';
+import 'prism-themes/themes/prism-coldark-dark.css';
 
 interface SlugProps {
 	post: Post;
