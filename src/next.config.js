@@ -1,4 +1,7 @@
-module.exports = {
+const { withPlausibleProxy } = require('next-plausible');
+
+// @ts-ignore
+module.exports = withPlausibleProxy()({
     async rewrites() {
         return [
             {
@@ -9,5 +12,5 @@ module.exports = {
     },
     future: {
         webpack5: true,
-    },
-}
+    }
+});

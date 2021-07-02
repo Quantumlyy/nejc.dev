@@ -3829,6 +3829,11 @@ next-mdx-remote@^2.1.4:
     "@mdx-js/mdx" "^1.6.22"
     "@mdx-js/react" "^1.6.22"
 
+next-plausible@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/next-plausible/-/next-plausible-1.7.0.tgz#04601d36d46ce0feca7a0792ef807b110db1057a"
+  integrity sha512-ndbuyJOgW4DPhbysBIsqut57mBORU0fEhu7oDOK6L6kvmS4HdR2b6CPD8lmeNkb3vrRrfdGVI2bQZPP+jizldg==
+
 next-seo@^4.24.0:
   version "4.24.0"
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.24.0.tgz#7c0447da00b8574dcda5c6979771a7f6efd24f55"

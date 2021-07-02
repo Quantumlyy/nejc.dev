@@ -10,6 +10,7 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import React, { StrictMode, useEffect } from 'react';
 import 'styles/_App.css';
+import PlausibleProvider from 'next-plausible';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -23,22 +24,24 @@ const App: NextPage<AppProps> = ({ Component, pageProps, router }) => {
 
 	return (
 		<StrictMode>
-			<Head>
-				<meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-				<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-				<meta httpEquiv="Expires" content="1y" />
-				<meta httpEquiv="Pragma" content="1y" />
-				<meta httpEquiv="Cache-Control" content="1y" />
-			</Head>
-			<DefaultSeo {...DefaultSEOProps} />
+			<PlausibleProvider domain="quantumly.dev">
+				<Head>
+					<meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
+					<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+					<meta httpEquiv="Expires" content="1y" />
+					<meta httpEquiv="Pragma" content="1y" />
+					<meta httpEquiv="Cache-Control" content="1y" />
+				</Head>
+				<DefaultSeo {...DefaultSEOProps} />
 
-			<div className="h-full bg-blur">
-				<AnimatePresence exitBeforeEnter>
-					<motion.div key={router.pathname} {...animations} className="h-full">
-						<Component {...pageProps} />
-					</motion.div>
-				</AnimatePresence>
-			</div>
+				<div className="h-full bg-blur">
+					<AnimatePresence exitBeforeEnter>
+						<motion.div key={router.pathname} {...animations} className="h-full">
+							<Component {...pageProps} />
+						</motion.div>
+					</AnimatePresence>
+				</div>
+			</PlausibleProvider>
 		</StrictMode>
 	);
 };

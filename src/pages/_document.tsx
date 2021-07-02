@@ -11,8 +11,6 @@ class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Space+Mono:wght@700&display=swap"
 						rel="stylesheet"
 					/>
-
-					<script async defer data-domain="quantumly.dev" src="https://stats.quantumly.dev/js/index.js"></script>
 				</Head>
 				<body>
 					<Main />
