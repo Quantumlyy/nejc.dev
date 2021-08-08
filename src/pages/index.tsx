@@ -12,30 +12,25 @@ import path from 'path';
 import React from 'react';
 import {
 	SiAmazonaws,
+	SiAngular,
+	SiAngularjs,
+	SiAngularuniversal,
 	SiBabel,
 	SiCloudflare,
 	SiCss3,
-	SiDiscord,
 	SiDocker,
 	SiGit,
-	SiGithub,
 	SiHtml5,
 	SiJava,
 	SiJsonwebtokens,
-	SiMarkdown,
 	SiNextDotJs,
 	SiNodeDotJs,
 	SiPostgresql,
 	SiReact,
 	SiRedis,
 	SiSentry,
-	SiServerless,
-	SiSpotify,
 	SiTailwindcss,
 	SiTypescript,
-	SiVisualstudiocode,
-	SiWebpack,
-	SiWebstorm,
 	SiYarn
 } from 'react-icons/si';
 import 'react-tippy/dist/tippy.css';
@@ -58,13 +53,15 @@ const Index: NextPage = () => {
 						<Icons>
 							<Icon icon={SiTypescript} title="TypeScript" />
 							<Icon icon={SiReact} title="React.js" />
+							<Icon icon={SiAngular} title="Angular" />
+							<Icon icon={SiAngularjs} title="AngularJS" />
+							<Icon icon={SiAngularuniversal} title="Angular Universal" />
 							<Icon icon={SiNextDotJs} title="Next.js" />
 							<Icon icon={SiRedis} title="Redis" />
 							<Icon icon={SiNodeDotJs} title="Node.js" />
 							<Icon icon={SiPostgresql} title="PostgreSQL" />
 							<Icon icon={SiDocker} title="Docker" />
 							<Icon icon={SiAmazonaws} title="AWS" />
-							<Icon icon={SiWebpack} title="Webpack" />
 							<Icon icon={SiBabel} title="Babel" />
 							<Icon icon={SiJava} title="Java" />
 							<Icon icon={SiYarn} title="Yarn" />
@@ -72,16 +69,9 @@ const Index: NextPage = () => {
 							<Icon icon={SiHtml5} title="HTML5" />
 							<Icon icon={SiSentry} title="Sentry" />
 							<Icon icon={SiTailwindcss} title="TailwindCSS" />
-							<Icon icon={SiServerless} title="Serverless" />
 							<Icon icon={SiCloudflare} title="Cloudflare" />
 							<Icon icon={SiGit} title="Git" />
-							<Icon icon={SiGithub} title="GitHub" />
-							<Icon icon={SiDiscord} title="Discord" />
-							<Icon icon={SiMarkdown} title="Markdown" />
 							<Icon icon={SiJsonwebtokens} title="JSON Web Tokens" />
-							<Icon icon={SiWebstorm} title="WebStorm IDE" />
-							<Icon icon={SiVisualstudiocode} title="VSCode" />
-							<Icon icon={SiSpotify} title="Spotify" />
 						</Icons>
 					</div>
 					<Song />
