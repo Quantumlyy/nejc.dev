@@ -26,8 +26,8 @@ export default function About() {
 								<a href="mailto:inbox@quantumly.dev" className="flex items-center space-x-3">
 									<FiMail /> <span>inbox@quantumly.dev</span>
 								</a>
-								<a href="https://github.com/quantumlytangled" className="flex items-center space-x-3">
-									<FiGithub /> <span>quantumlytangled</span>
+								<a href="https://github.com/quantumlyy" className="flex items-center space-x-3">
+									<FiGithub /> <span>quantumlyy</span>
 								</a>
 								<a href="https://fosstodon.org/@quantumly" className="flex items-center space-x-3">
 									<FaMastodon /> <span>@quantumly@fosstodon.org</span>
