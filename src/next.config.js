@@ -9,8 +9,5 @@ module.exports = withPlausibleProxy()({
                 destination: '/'
             }
         ];
-    },
-    future: {
-        webpack5: true,
     }
 });
