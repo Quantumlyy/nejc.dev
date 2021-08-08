@@ -3,23 +3,22 @@ import { data } from 'autoprefixer';
 import { getAllPosts, getPostBySlug, Post } from 'core/blog';
 import Layout from 'layouts/Layout';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import hydrate from 'next-mdx-remote/hydrate';
-import renderToString from 'next-mdx-remote/render-to-string';
-import type { MdxRemote } from 'next-mdx-remote/types';
+import { MDXRemote } from 'next-mdx-remote';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types';
+import { serialize } from 'next-mdx-remote/serialize';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
 import 'prism-themes/themes/prism-coldark-dark.css';
+import React from 'react';
 
 interface SlugProps {
 	post: Post;
-	content: MdxRemote.Source;
+	content: MDXRemoteSerializeResult;
 }
 
-const Slug: NextPage<SlugProps> = ({ post, content: mdxContent }) => {
+const Slug: NextPage<SlugProps> = ({ post, content }) => {
 	const router = useRouter();
-	const content = hydrate(mdxContent);
 
 	return (
 		<>
@@ -47,7 +46,9 @@ const Slug: NextPage<SlugProps> = ({ post, content: mdxContent }) => {
 							{post.title}
 						</h1>
 
-						<div className="mt-44 max-w-3xl p-10 mx-auto prose prose-dark glass rounded-lg">{content}</div>
+						<div className="mt-44 max-w-3xl p-10 mx-auto prose prose-dark glass rounded-lg">
+							<MDXRemote {...content} lazy />
+						</div>
 					</div>
 				</Layout>
 			</div>
@@ -58,7 +59,7 @@ const Slug: NextPage<SlugProps> = ({ post, content: mdxContent }) => {
 export const getStaticProps: GetStaticProps<SlugProps> = async (ctx) => {
 	const post = getPostBySlug(ctx.params?.slug as string, ['title', 'excerpt', 'author', 'content', 'cover', 'slug', 'tags', 'language']);
 
-	const mdxSource = await renderToString(post.content, {
+	const mdxSource = await serialize(post.content, {
 		scope: data,
 		mdxOptions: {
 			remarkPlugins: [require('remark-autolink-headings'), require('remark-slug'), require('remark-code-titles')],
