@@ -29,10 +29,10 @@ const Etc = () => {
 					<Link to={'/presence'}>/presence</Link>
 				</li>
 				<li>
-					{t('pages.etc.ethAddress')}: <code>0x1c5d3f08c244F7a684dC10d56C3b2a884C29ae8A</code>
+					{t('pages.etc.ethAddress')}: <code>quantumly.eth</code> (<code>0xf82d0ea7A2eDde6d30cAf8A1E6Fed09f726fD584</code>)
 				</li>
 				<li>
-					{t('pages.etc.bscAddress')}: <code>0xEfa20fbC58637dE44e3E3d74AB34348B48aFe2d4</code>
+					{t('pages.etc.bscAddress')}: <code>0xf82d0ea7A2eDde6d30cAf8A1E6Fed09f726fD584</code>
 				</li>
 			</ul>
 		</PageWrapper>
