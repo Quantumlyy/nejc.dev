@@ -4,7 +4,7 @@ import Layout from 'layouts/Layout';
 import Link from 'next/link';
 import { toWords } from 'number-to-words';
 import React from 'react';
-import { FaKeybase, FaMastodon } from 'react-icons/fa';
+import { FaEthereum, FaKeybase, FaMastodon } from 'react-icons/fa';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const birthday = day('21 September 2003').toDate();
@@ -31,6 +31,9 @@ export default function About() {
 								</a>
 								<a href="https://fosstodon.org/@quantumly" className="flex items-center space-x-3">
 									<FaMastodon /> <span>@quantumly@fosstodon.org</span>
+								</a>
+								<a href="https://etherscan.io/address/quantumly.eth" className="flex items-center space-x-3">
+									<FaEthereum /> <span>quantumly.eth</span>
 								</a>
 							</div>
 						</div>
