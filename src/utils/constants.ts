@@ -1,5 +1,5 @@
-export const UKTimeFormatter = new Intl.DateTimeFormat(undefined, {
-	timeZone: 'Europe/London',
+export const SLOTimeFormatter = new Intl.DateTimeFormat(undefined, {
+	timeZone: 'Europe/Ljubljana',
 	hour: 'numeric',
 	minute: 'numeric',
 	hour12: false,
@@ -9,8 +9,8 @@ export const RelativeTimeFormatter = new Intl.RelativeTimeFormat('en', {
 	style: 'long',
 });
 
-export const discordId = '268798547439255572';
-export const dob = new Date('2004-11-02');
+export const discordId = '126321762483830785';
+export const dob = new Date('2003-09-21');
 export const age = new Date(Date.now() - dob.getTime()).getUTCFullYear() - 1970;
 export const hasHadBirthdayThisYear = new Date().getMonth() >= dob.getMonth() && new Date().getDate() >= dob.getDate();
 export const nextBirthdayYear = new Date().getFullYear() + (hasHadBirthdayThisYear ? 1 : 0);

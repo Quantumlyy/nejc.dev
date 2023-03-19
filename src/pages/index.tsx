@@ -1,44 +1,23 @@
 import clsx from 'clsx';
-import type {GetStaticProps} from 'next';
+import type { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import {HiOutlineExternalLink} from 'react-icons/hi';
+import { HiOutlineExternalLink } from 'react-icons/hi';
 import {
-	SiAmazonaws,
-	SiBabel,
-	SiDiscord,
-	SiDocker,
-	SiGit,
-	SiGithub,
-	SiGo,
-	SiJavascript,
-	SiMongodb,
-	SiNextdotjs,
-	SiNodedotjs,
-	SiPostgresql,
-	SiReact,
-	SiRedis,
-	SiSpotify,
-	SiTailwindcss,
-	SiTwitter,
-	SiTypescript,
-	SiVisualstudiocode,
-	SiWebpack,
-	SiWebstorm,
-	SiYarn,
+	SiDiscord, SiGithub, SiSpotify, SiTwitter
 } from 'react-icons/si';
-import type {Data} from 'use-lanyard';
-import {ContactForm} from '../components/contact-form';
-import {CardHoverEffect, hoverClassName} from '../components/hover-card';
-import {Time} from '../components/time';
-import {useUpdatingLanyard} from '../hooks/lanyard';
+import type { Data } from 'use-lanyard';
+import { ContactForm } from '../components/contact-form';
+import { CardHoverEffect, hoverClassName } from '../components/hover-card';
+import { Time } from '../components/time';
+import { useUpdatingLanyard } from '../hooks/lanyard';
 import matrix from '../images/matrix.gif';
 import me from '../images/me.jpg';
-import {getMapURL} from '../server/apple-maps';
-import {env} from '../server/env';
-import {getLanyard} from '../server/lanyard';
-import {age, discordId} from '../utils/constants';
-import {formatList} from '../utils/lists';
+import { getMapURL } from '../server/apple-maps';
+import { env } from '../server/env';
+import { getLanyard } from '../server/lanyard';
+import { age, discordId } from '../utils/constants';
+import { formatList } from '../utils/lists';
 
 export interface Props {
 	lanyard: Data;
@@ -82,7 +61,7 @@ export default function Home(props: Props) {
 						</h1>
 
 						<p className="text-center text-pink-800 dark:text-pink-300/95 dark:text-glow-pink-500/50 md:text-left">
-							{age} y/o full stack TypeScript engineer 🪄
+							{age} y/o full stack engineer 🪄
 						</p>
 
 						<p className="text-center text-pink-800 dark:text-pink-300/80 dark:text-glow-pink-500/30 md:text-left">
@@ -272,31 +251,6 @@ export default function Home(props: Props) {
 					<p className="rounded-full bg-white/10 pl-2.5 pr-3 font-bold text-white/95 backdrop-blur-md">
 						📍 {props.location}
 					</p>
-				</div>
-			</div>
-
-			<div className="col-span-3 flex items-center justify-center rounded-2xl bg-fuchsia-700 p-6 text-fuchsia-100 md:col-span-2">
-				<div className="grid w-full grid-cols-4 grid-rows-4 gap-4 [&>svg]:w-full [&>svg]:text-center">
-					<SiTypescript size={24} />
-					<SiDocker size={24} />
-					<SiNextdotjs size={24} />
-					<SiRedis size={24} />
-					<SiPostgresql size={24} />
-					<SiReact size={24} />
-					<SiTailwindcss size={24} />
-					<SiNodedotjs size={24} />
-					<SiGo size={24} />
-					<SiJavascript size={24} />
-					<SiAmazonaws size={24} />
-					<SiWebstorm size={24} />
-					<SiWebpack size={24} />
-					<SiBabel size={24} />
-					<SiYarn size={24} />
-					<SiGit size={24} />
-					<SiSpotify size={24} />
-					<SiMongodb size={24} />
-					<SiVisualstudiocode size={24} />
-					<SiDiscord size={24} />
 				</div>
 			</div>
 

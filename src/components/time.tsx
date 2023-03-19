@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import {motion} from 'framer-motion';
 import {useEffect, useRef, useState} from 'react';
-import {daysUntilBirthday, UKTimeFormatter} from '../utils/constants';
+import {daysUntilBirthday, SLOTimeFormatter} from '../utils/constants';
 
 function Night({time}: {time: Date}) {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -44,7 +44,7 @@ function Night({time}: {time: Date}) {
 					className={clsx('font-title text-2xl', 'text-glow-sky-900 dark:text-glow-sky-500')}
 					suppressHydrationWarning
 				>
-					{UKTimeFormatter.format(time)}
+					{SLOTimeFormatter.format(time)}
 				</h2>
 
 				<p className={clsx('text-xs font-light', 'text-glow-sky-900 dark:text-glow-sky-500')}>in the uk</p>
@@ -59,7 +59,7 @@ function Day({time}: {time: Date}) {
 			<div className="flex w-full items-center justify-center">
 				<div className="opacity-85 flex items-baseline space-x-1 md:space-x-2">
 					<div className="flex flex-col">
-						<div className="font-title text-2xl text-white">{UKTimeFormatter.format(time)}</div>
+						<div className="font-title text-2xl text-white">{SLOTimeFormatter.format(time)}</div>
 						<p
 							className={clsx('text-center text-xs font-light', 'text-white text-glow-sky-900 dark:text-glow-sky-500')}
 						>
