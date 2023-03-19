@@ -1,15 +1,15 @@
 {
-  "name": "quantumly-dot-dev",
-  "version": "1.0.0",
+	"name": "quantumly-dot-dev",
+	"version": "1.0.0",
 	"license": "Apache-2.0",
 	"private": true,
-  "scripts": {
-    "dev": "next dev src -p 8300",
-    "build": "next build src",
-    "clean": "rimraf src/.next src/public/sw.js src/public/workbox* src/public/sitemap.xml",
-    "start": "next start src",
+	"scripts": {
+		"dev": "next dev src -p 8300",
+		"build": "next build src",
+		"clean": "rimraf src/.next src/public/sw.js src/public/workbox* src/public/sitemap.xml",
+		"start": "next start src",
 		"lint": "next lint"
-  },
+	},
 	"dependencies": {
 		"@marsidev/react-turnstile": "^0.0.7",
 		"@next/font": "^13.1.6",
