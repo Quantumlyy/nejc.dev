@@ -1,5 +1,7 @@
-node_modules/
-dist/
-src/.next/
-src/public/sw.js
-src/public/workbox*
+.next
+dist
+build
+out
+node_modules
+.yarn
+.git

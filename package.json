@@ -28,37 +28,21 @@
 		"use-lanyard": "^1.4.2",
 		"zod": "^3.20.6"
 	},
-  "devDependencies": {
+	"devDependencies": {
 		"@tailwindcss/forms": "^0.5.3",
-    "@sapphire/eslint-config": "^3.2.3",
-    "@sapphire/prettier-config": "^1.1.6",
-    "@sapphire/ts-config": "^3.0.0",
-    "@tailwindcss/typography": "^0.4.1",
-    "@types/autoprefixer": "^10.2.0",
-    "@types/node": "^16.10.2",
 		"@types/common-tags": "^1.8.1",
 		"@types/jwa": "^2.0.0",
 		"@types/react": "^18.0.28",
 		"@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
-    "@typescript-eslint/parser": "^4.32.0",
 		"autoprefixer": "^10.4.13",
 		"danger": "^11.2.3",
 		"eslint": "8.34.0",
 		"eslint-config-next": "13.1.6",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
 		"postcss": "^8.4.21",
-    "prettier": "^2.4.1",
+		"prettier": "^2.8.4",
 		"prettier-plugin-tailwindcss": "^0.2.3",
-    "pretty-quick": "^3.1.1",
 		"sharp": "^0.31.3",
 		"tailwindcss": "^3.2.7",
 		"typescript": "^4.9.5"
-  },
-  "prettier": "@sapphire/prettier-config"
+	}
 }
