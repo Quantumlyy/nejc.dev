@@ -3,15 +3,11 @@ import type { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiOutlineExternalLink } from 'react-icons/hi';
-import {
-	SiDiscord, SiGithub, SiSpotify, SiTwitter
-} from 'react-icons/si';
+import { SiDiscord, SiSpotify, SiTwitter } from 'react-icons/si';
 import type { Data } from 'use-lanyard';
-import { ContactForm } from '../components/contact-form';
 import { CardHoverEffect, hoverClassName } from '../components/hover-card';
 import { Time } from '../components/time';
 import { useUpdatingLanyard } from '../hooks/lanyard';
-import matrix from '../images/matrix.gif';
 import me from '../images/me.jpg';
 import { getMapURL } from '../server/apple-maps';
 import { env } from '../server/env';
@@ -44,28 +40,28 @@ export default function Home(props: Props) {
 
 	return (
 		<main className="mx-auto grid max-w-3xl grid-cols-6 gap-6 px-6 pb-40 pt-16">
-			<div className="p-200 col-span-4 flex items-center justify-center overflow-hidden rounded-2xl bg-pink-200 dark:border-pink-500 dark:bg-pink-500/20 dark:backdrop-blur-2xl md:col-span-4 md:h-52">
+			<div className="p-200 col-span-4 flex items-center justify-center overflow-hidden rounded-2xl bg-purple-200 dark:border-purple-500 dark:bg-purple-500/20 dark:backdrop-blur-2xl md:col-span-4 md:h-52">
 				<div className="flex flex-col items-center space-y-4 py-8 px-6 md:flex-row md:space-y-0 md:space-x-4">
 					<Image
 						src={me}
 						placeholder="blur"
 						height={96}
 						width={96}
-						className="h-24 w-24 rounded-full border border-pink-500 object-cover"
+						className="h-24 w-24 rounded-full border border-purple-500 object-cover"
 						alt="Photo of me"
 					/>
 
 					<div className="space-y-1">
-						<h1 className="text-center font-title text-xl font-bold tracking-tighter text-pink-900 dark:text-pink-300 dark:text-glow-pink-500/50 md:text-left">
-							alistair smith
+						<h1 className="text-center font-title text-xl font-bold tracking-tighter text-purple-900 dark:text-purple-300 dark:text-glow-purple-500/50 md:text-left">
+							nejc drobnič
 						</h1>
 
-						<p className="text-center text-pink-800 dark:text-pink-300/95 dark:text-glow-pink-500/50 md:text-left">
+						<p className="text-center text-purple-800 dark:text-purple-300/95 dark:text-glow-purple-500/50 md:text-left">
 							{age} y/o full stack engineer 🪄
 						</p>
 
-						<p className="text-center text-pink-800 dark:text-pink-300/80 dark:text-glow-pink-500/30 md:text-left">
-							<Link href="https://alistair.blog" target="_blank" rel="noopener noreferrer">
+						<p className="text-center text-purple-800 dark:text-purple-300/80 dark:text-glow-purple-500/30 md:text-left">
+							<Link href="https://blog.quantumly.dev" target="_blank" rel="noopener noreferrer">
 								blog ↗️
 							</Link>
 						</p>
@@ -75,7 +71,7 @@ export default function Home(props: Props) {
 
 			<CardHoverEffect className="col-span-2 h-full">
 				<Link
-					href="https://twitter.com/alistaiir"
+					href="https://twitter.com/quantumlyy"
 					target="_blank"
 					rel="noopener noreferrer"
 					className={clsx(
@@ -114,46 +110,10 @@ export default function Home(props: Props) {
 
 			<Time />
 
-			<CardHoverEffect className="col-span-3 h-full md:col-span-3">
-				<Link
-					href="https://github.com/alii"
-					target="_blank"
-					rel="noopener noreferrer"
-					className={clsx(
-						'group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl text-white',
-						hoverClassName,
-					)}
-				>
-					<span aria-hidden className="pointer-events-none absolute inset-0 -z-20">
-						<Image
-							src={matrix}
-							alt="The Matrix scrolling characters effect"
-							fill
-							style={{objectFit: 'cover'}}
-							className="brightness-[0.7]"
-						/>
-						<span className="absolute inset-0 bg-neutral-900/50" />
-					</span>
-
-					<span aria-hidden className="px-6 pt-6">
-						<span className="flex justify-between">
-							<SiGithub className="text-3xl" />
-							<HiOutlineExternalLink className="text-xl opacity-50 transition duration-500 group-hover:opacity-100" />
-						</span>
-					</span>
-
-					<span className="space-y-0.5 px-6 pb-6">
-						<span className="block font-title font-bold">github</span>
-
-						<span className="block text-sm">my open source work &amp; contributions</span>
-					</span>
-				</Link>
-			</CardHoverEffect>
-
 			<CardHoverEffect className="col-span-3 h-52">
 				{!lanyard?.spotify || !lanyard.spotify.album_art_url ? (
 					<Link
-						href="https://open.spotify.com/playlist/18R9Cntl2PZEaGMLz4cyX2"
+						href="https://open.spotify.com/playlist/6yJ1T0Fjw73yUNGMohmYkk?si=bce0ba6f0390405a"
 						target="_blank"
 						rel="noopener noreferrer"
 						className={clsx('group relative flex h-full overflow-hidden rounded-2xl', hoverClassName)}
@@ -252,31 +212,6 @@ export default function Home(props: Props) {
 						📍 {props.location}
 					</p>
 				</div>
-			</div>
-
-			<div className="col-span-6 space-y-2 rounded-2xl bg-yellow-200 p-6 dark:bg-indigo-800 md:col-span-4">
-				<h2 className="font-title text-xl font-bold">
-					hello world <span className="inline dark:hidden">🌻</span>
-					<span className="hidden dark:inline">⭐</span>
-				</h2>
-
-				<p>
-					My name is alistair, I'm a software engineer from the United Kingdom. I've been programming for as long as I
-					can remember, and I'm currently spending my time with the wonderful people at{' '}
-					<Link className="underline" href="https://hop.io">
-						Hop
-					</Link>
-					.
-				</p>
-
-				<p>
-					Beyond programming, I'm really interested in music production and you can often catch spending time messing
-					with DJ decks and my Maschine. Either that or I'll be out riding my Boosted Board 🛹
-				</p>
-			</div>
-
-			<div className="col-span-6 space-y-4 rounded-2xl bg-lime-400 p-6 text-black md:col-span-6">
-				<ContactForm />
 			</div>
 		</main>
 	);

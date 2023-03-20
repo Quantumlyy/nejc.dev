@@ -55,7 +55,7 @@ export function ContactForm() {
 				className="space-y-2 [&>label]:block [&_input]:rounded-md [&_textarea]:rounded-md"
 			>
 				<label htmlFor="email">
-					<input type="email" name="email" id="email" required placeholder="hi@alistair.sh" className="w-full" />
+					<input type="email" name="email" id="email" required placeholder="nejc@nejc.dev" className="w-full" />
 				</label>
 
 				<label htmlFor="body">
@@ -65,7 +65,7 @@ export function ContactForm() {
 				<Turnstile
 					options={{responseFieldName: 'turnstile'}}
 					style={{display: 'none'}}
-					siteKey="0x4AAAAAAABwxsgAijQAi5FS"
+					siteKey="0x4AAAAAAADVvN5_0JAQuTiF"
 				/>
 
 				<button
