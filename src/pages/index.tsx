@@ -135,10 +135,10 @@ export default function Home(props: Props) {
 
 							<div className="space-y-0.5">
 								<h2 className="font-title font-bold">
-									<span className="font-medium">playlist:</span>early travel
+									<span className="font-medium">playlist:</span>eh
 								</h2>
 
-								<p className="text-sm">because you had to get a 3 hour bus journey in the early hours</p>
+								<p className="text-sm">for when the mood just isn't right</p>
 							</div>
 						</span>
 					</Link>
