@@ -4,10 +4,9 @@
 	"license": "Apache-2.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev src -p 8300",
-		"build": "next build src",
-		"clean": "rimraf src/.next src/public/sw.js src/public/workbox* src/public/sitemap.xml",
-		"start": "next start src",
+		"dev": "next dev -p 8300",
+		"build": "next build",
+		"start": "next start",
 		"lint": "next lint"
 	},
 	"dependencies": {
