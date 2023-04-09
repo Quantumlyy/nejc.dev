@@ -10,8 +10,8 @@ const config = {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'i.scdn.co',
-				pathname: '/image/*',
+				hostname: 'quantumly-cu-site-ndpersonal.b-cdn.net',
+				pathname: '/*',
 			},
 
 			{
