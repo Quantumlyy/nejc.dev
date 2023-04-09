@@ -1,7 +1,0 @@
-node_modules/
-dist/
-src/.next/
-src/public/sw.js
-src/public/workbox*
-src/next.config.js
-src/next-env.d.ts

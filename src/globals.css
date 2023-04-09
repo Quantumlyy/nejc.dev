@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-grid-neutral-100/40 bg-neutral-50 text-neutral-800 dark:bg-grid-neutral-700/50 dark:bg-neutral-800 dark:text-neutral-100;
+}
