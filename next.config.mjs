@@ -23,7 +23,13 @@ const config = {
 	},
 
 	async redirects() {
-		return [];
+		return [
+			{
+				source: '/osdp',
+				destination: 'https://github.com/Quantumlyy/osdp-rs',
+				permanent: true,
+			},
+		];
 	},
 };
 
